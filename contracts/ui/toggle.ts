@@ -1,0 +1,55 @@
+import { cva, VariantProps } from "class-variance-authority";
+import * as TogglePrimitive from '@radix-ui/react-toggle'
+import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
+
+export namespace Toggle {
+  export const DefaultVariants = cva(
+    'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground',
+    {
+      variants: {
+        variant: {
+          default: 'bg-transparent',
+          outline:
+            'border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground',
+        },
+        size: {
+          default: 'h-9 px-3',
+          sm: 'h-8 px-2',
+          lg: 'h-10 px-3',
+        },
+      },
+      defaultVariants: {
+        variant: 'default',
+        size: 'default',
+      },
+    }
+  )
+
+  export type Variants = typeof DefaultVariants;
+
+  export type Props =
+    React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> &
+    VariantProps<Variants>
+
+  export type Component = React.ForwardRefExoticComponent<
+    Props & React.RefAttributes<HTMLButtonElement>
+  >;
+
+  export type GroupContext = React.Context<VariantProps<Variants>>
+
+  export type GroupProps =
+    React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> &
+    VariantProps<Variants>
+
+  export type GroupComponent = React.ForwardRefExoticComponent<
+    GroupProps & React.RefAttributes<HTMLDivElement>
+  >;
+
+  export type GroupItemProps =
+    React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> &
+    VariantProps<Variants>
+
+  export type GroupItemComponent = React.ForwardRefExoticComponent<
+    GroupItemProps & React.RefAttributes<HTMLButtonElement>
+  >;
+}

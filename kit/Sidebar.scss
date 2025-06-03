@@ -1,0 +1,13 @@
+.is-submenu-active{
+    overflow: visible !important;
+
+    &::before{
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgb(var(--dominant-600));
+        inset-inline-start: -13.5px;
+    }
+}

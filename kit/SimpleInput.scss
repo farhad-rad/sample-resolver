@@ -1,0 +1,43 @@
+.panelly-input.simple {
+  @apply flex gap-1 items-center h-9 w-full rounded-md border bg-transparent px-3 py-1 text-gray-900 shadow-sm transition-all file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm;
+
+  outline: transparent solid 1px;
+  max-width: var(--input-width);
+  min-height: var(--input-height);
+
+  .label {
+    min-width: fit-content;
+  }
+
+  .suffixIcon {
+    color: rgb(var(--gray-700)) !important;
+  }
+
+  input {
+    height: 100%;
+    background-color: unset;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  svg {
+    height: 18px;
+    width: 18px;
+  }
+
+  &:has(input:focus) {
+    outline: rgb(var(--gray-300)) solid 2px;
+  }
+}

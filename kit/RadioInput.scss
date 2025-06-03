@@ -1,0 +1,21 @@
+.panelly-input.radio {
+  @apply flex gap-1 items-center h-fit min-h-9 w-fit max-w-full flex-wrap rounded-md border bg-transparent p-1 text-gray-900 shadow-sm transition-all file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-xs;
+
+  max-width: var(--input-width);
+  min-height: var(--input-height);
+
+  .label {
+    min-width: fit-content;
+  }
+
+  .prefixIcon,
+  .suffixIcon,
+  .label {
+    color: rgb(var(--gray-700)) !important;
+  }
+
+  svg {
+    height: 18px;
+    width: 18px;
+  }
+}

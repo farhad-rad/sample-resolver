@@ -1,0 +1,73 @@
+.panelly-calendar {
+  background-color: transparent !important;
+  border: none !important;
+
+  @media screen and (min-width: 768px) {
+    @apply shadow-md;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+  }
+  .rmdp-top-class {
+    justify-content: center;
+  }
+  .rmdp-month-picker,
+  .rmdp-year-picker {
+    background-color: transparent !important;
+  }
+  .rmdp-day-picker:not([data-active="true"]) {
+    opacity: 0;
+  }
+
+  .rmdp-header-values {
+    color: rgb(var(--gray-700));
+  }
+  .rmdp-week-day {
+    color: rgb(var(--dominant-500));
+  }
+  .rmdp-day {
+    span {
+      border-radius: 8px !important;
+      color: rgb(var(--gray-700)) !important;
+      @apply transition-colors;
+    }
+    &.rmdp-today {
+      span {
+        background-color: transparent !important;
+        border: solid 2px rgb(var(--dominant-400)) !important;
+        color: rgb(var(--gray-700)) !important;
+      }
+    }
+    &:hover {
+      span {
+        background-color: rgb(var(--dominant-600)) !important;
+        color: rgb(var(--gray-200)) !important;
+      }
+    }
+    &.rmdp-selected {
+      span {
+        background-color: rgb(var(--dominant-500)) !important;
+        color: white !important;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .rmdp-week {
+      gap: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    .rmdp-week-day {
+      font-size: 0.8rem;
+    }
+    .rmdp-header-values {
+      font-size: 0.9rem;
+    }
+    .rmdp-day {
+      width: 42px;
+      height: 42px;
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
